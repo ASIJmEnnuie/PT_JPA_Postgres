@@ -1,8 +1,8 @@
 package org.jug.algeria.controller;
 
 import org.fest.assertions.Assertions;
-import org.jug.algeria.config.AppConfig;
-import org.jug.algeria.domain.AppUser;
+import org.jug.algeria.config.*;
+import org.jug.algeria.domain.Evenement;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -21,10 +21,10 @@ public class HomeControllerIntegrationTests {
     RestTemplate restTemplate = new TestRestTemplate();
 
     @Test
-    public void shouldAdd_AppUser_ToDb(){
-        ResponseEntity<AppUser> responseEntity = restTemplate.postForEntity("http://localhost:9000/user/Abderrazak BOUADMA", MockHttpServletRequest.DEFAULT_PROTOCOL, AppUser.class);
-        final AppUser appUser = responseEntity.getBody();
-        Assertions.assertThat(appUser).isNotNull();
-        Assertions.assertThat(appUser.getUsername()).isNotNull().isEqualTo("Abderrazak BOUADMA");
+    public void shouldAdd_Evenement_ToDb(){
+        ResponseEntity<Evenement> responseEntity = restTemplate.postForEntity("http://localhost:9000/evenement/event", MockHttpServletRequest.DEFAULT_PROTOCOL, Evenement.class);
+        final Evenement eventUser = responseEntity.getBody();
+        Assertions.assertThat(eventUser).isNotNull();
+        Assertions.assertThat(eventUser.getNomEvt()).isNotNull().isEqualTo("event");
     }
 }
