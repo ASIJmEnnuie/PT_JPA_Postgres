@@ -28,8 +28,12 @@ public class Evenement {
     @Column(name = "imageEvt")
     private String imageEvt;
 
-    public Evenement(String nom) {
-        this.nomEvt = nom;
+    public Evenement() {
+
+    }
+    
+    public Evenement(String nomEvt) {
+        this.nomEvt = nomEvt;
     }
 
     public Evenement(Long id, String nom, String lieu, String orga, String date, String heure,
