@@ -1,12 +1,15 @@
 # Welcome to spring-boot-postgres Sample project
 
-## Pre requisities
-Java 8
-Maven 3.1.x
-Postgresql instance
+## Pre-requis
+Java 8  
+Maven 3.1.x  
+Postgresql instance  
+
 
 ## Postgres Instance Configuration
-In order to use your instance please update the [ Database Configuration Section ] section in ```src/main/resources/dev/application.properties```
+Il est nécessaire de créer la BD postgresql "asijmennuie" avant toute chose,
+ainsi que de définir le mot de passe postgres (et le modifier si nécessaire dans
+la dernière ligne du fichier application.properties) ```src/main/resources/dev/application.properties```
 ```
 #
 # [ Database Configuration Section ]
@@ -14,39 +17,38 @@ In order to use your instance please update the [ Database Configuration Section
 spring.jpa.database=POSTGRESQL
 spring.datasource.platform=postgres
 spring.jpa.show-sql=true
-spring.jpa.hibernate.ddl-auto=create-drop
+spring.datasource.initialize=true
+spring.jpa.hibernate.ddl=none
 spring.database.driverClassName=org.postgresql.Driver
 spring.datasource.url=jdbc:postgresql://localhost:5432/asijmennuie
 spring.datasource.username=postgres
-spring.datasource.password=postgres
-#
-# [ Other Configuration Attributes ]
-#
+spring.datasource.password=evasion
 ```
 
-## Run Application Locally
+## Lancer l'application
 ```mvn spring-boot:run```
 
-## Run Integration Tests
+## Lancer les tests d'intégration
 ```mvn test -DhsqldbIntegrationTest=true```
 
-## Load Sample Data
-schema and data are initialized using ```schema-${platform}.sql``` and ```data-${platform}.sql```
+## Fichiers de chargement des données
+schema and data are initialized using ```schema-postgres.sql``` and ```data-postgres.sql```
 
-## Invoke Application
+## Utilisation de l'application
 
-### through browser
-to make POST requests from your browser use tools like : https://chrome.google.com/webstore/detail/rest-console/cokgbflfommojglbmbpenpphppikmonn
+### Via navigateur (chrome de préférence)
+Télécharger le plug-in : https://chrome.google.com/webstore/detail/rest-console/cokgbflfommojglbmbpenpphppikmonn
 
 
-to add a user make a POST like this example : ```http://localhost:9095/user/Yazid Cherfi```
-to list all application users : ```http://localhost:9095/user```
+Pour ajouter un evenement (méthode POST) utiliser par exemple : ```http://localhost:9095/user/un evenement```
+Pour la liste de tous les evenements utiliser : ```http://localhost:9095/evenement```
 
-### Add a user
-```curl -X POST "http://localhost:9095/user/Abderrazak%20BOUADMA"```
-running the above POST request will result to an 200 Ok HTTP response and JSON Content-Type of Application/json of the new created object.
-the url must be URL_ENCODED before making the request (notice the %20 which encodes the white space character).
+### Via terminal : Ajout evenement
+```curl -X POST "http://localhost:9095/evenement/un%20evenement"```
+(ne pas oublier d'encoder les caractères spéciaux et espaces)
 
-### List All Users
-```curl "http://localhost:9095/user"```
-running the above GET request will result to an 200 Ok HTTP response and JSON Content-Type of Application/json and a list (maybe empty) of all users in DB
+### Via terminal : Liste des evenements
+```curl "http://localhost:9095/evenement"```
+
+## Visualisation des résultats
+http://localhost:9095/evenement
