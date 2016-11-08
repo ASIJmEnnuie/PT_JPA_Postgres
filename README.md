@@ -32,7 +32,7 @@ spring.datasource.password=evasion
 ```mvn test -DhsqldbIntegrationTest=true```
 
 ## Fichiers de chargement des données
-schema and data are initialized using ```schema-postgres.sql``` and ```data-postgres.sql```
+Le schema de la BD et les données sont initialisées avec les scripts ```schema-postgres.sql``` and ```data-postgres.sql```
 
 ## Utilisation de l'application
 
