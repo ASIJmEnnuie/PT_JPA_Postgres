@@ -1,0 +1,5 @@
+client/.sass-cache
+client/dist
+client/node_modules
+server/build
+server/target
