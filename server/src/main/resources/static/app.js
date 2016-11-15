@@ -26,6 +26,7 @@ function connect() {
             showEvents(JSON.parse(getEventsByLieu.body));
         });
         stompClient.subscribe('/topic/listeEvenements', function (getAllEvents) {
+            console.log("events : " + getAllEvents.body);
             showEvents(JSON.parse(getAllEvents.body));
         });
     });

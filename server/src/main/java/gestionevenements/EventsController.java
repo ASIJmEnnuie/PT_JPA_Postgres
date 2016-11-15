@@ -1,4 +1,4 @@
-package gestionevenements.controller;
+package gestionevenements;
 
 import gestionevenements.domain.*;
 import gestionevenements.repository.*;
@@ -15,8 +15,8 @@ import java.util.*;
 import java.util.function.Consumer;
 
 @Controller
-@RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-public class HomeController {
+//@RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+public class EventsController {
 
     @Inject
     EvenementRepository evenementRepository;
@@ -25,6 +25,9 @@ public class HomeController {
     public Evenement create(@PathVariable String nomEvt) {
         return evenementRepository.save(new Evenement(nomEvt));
     }*/
+    public EventsController() {
+
+    }
 
     @MessageMapping("/evenements")
     @SendTo("/topic/listeEvenements")
@@ -32,6 +35,8 @@ public class HomeController {
     public List<Evenement> findAll() {
         final List<Evenement> resultList = new ArrayList<>();
         final Iterable<Evenement> all = evenementRepository.findAll();
+
+        System.out.println("\n\nUN TEST\n\n");
         all.forEach(new Consumer<Evenement>() {
             @Override
             public void accept(Evenement evenement) {
