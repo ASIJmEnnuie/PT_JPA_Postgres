@@ -1,4 +1,4 @@
-package gestionevenements.domain;
+package gestionevenements;
 
 import javax.persistence.*;
 

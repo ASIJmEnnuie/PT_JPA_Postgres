@@ -2,8 +2,6 @@ package gestionevenements.controller;
 
 import org.fest.assertions.Assertions;
 import gestionevenements.*;
-import gestionevenements.config.*;
-import gestionevenements.domain.Evenement;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -17,13 +15,13 @@ import org.springframework.web.client.RestTemplate;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {WebSocketConfig.class})
 @WebIntegrationTest("server.port:9000")
-public class HomeControllerIntegrationTests {
+public class EventsControllerIntegrationTests {
 
     RestTemplate restTemplate = new TestRestTemplate();
 
     @Test
     public void shouldAdd_Evenement_ToDb(){
-        ResponseEntity<Evenement> responseEntity = restTemplate.postForEntity("http://localhost:9000/evenement/event", MockHttpServletRequest.DEFAULT_PROTOCOL, Evenement.class);
+        ResponseEntity<Evenement> responseEntity = restTemplate.postForEntity("http://localhost:9000/evenements/event", MockHttpServletRequest.DEFAULT_PROTOCOL, Evenement.class);
         final Evenement eventUser = responseEntity.getBody();
         Assertions.assertThat(eventUser).isNotNull();
         Assertions.assertThat(eventUser.getNomEvt()).isNotNull().isEqualTo("event");

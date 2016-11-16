@@ -99,9 +99,9 @@
         </dependency>
     </dependencies>
 
-    <!-- Profiles -->
+<!-- Profiles -->
   <profiles>
-    <!-- Useful to run integration tests into an embedded HSQLDB instance -->
+    <!--Useful to run integration tests into an embedded HSQLDB instance-->
     <profile>
       <id>devTest8</id>
       <activation>
@@ -123,7 +123,7 @@
       </build>
     </profile>
 
-    <!-- Useful to run application locally -->
+    <!--Useful to run application locally-->
     <profile>
       <id>dev8</id>
       <activation>

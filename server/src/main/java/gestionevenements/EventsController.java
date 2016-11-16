@@ -1,7 +1,5 @@
 package gestionevenements;
 
-import gestionevenements.domain.*;
-import gestionevenements.repository.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +30,7 @@ public class EventsController {
     @MessageMapping("/evenements")
     @SendTo("/topic/listeEvenements")
     //@RequestMapping(value = "/evenements", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Evenement> findAll() {
+    public List<Evenement> getAllEvents() {
         final List<Evenement> resultList = new ArrayList<>();
         final Iterable<Evenement> all = evenementRepository.findAll();
 

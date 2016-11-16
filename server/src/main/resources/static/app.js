@@ -78,4 +78,4 @@ $(function () {
     $( "#sendDate" ).click(function() { sendDate(); });
     $( "#sendLieu" ).click(function() { sendLieu(); });
     $( "#sendAll" ).click(function() { sendAll(); });
-});
+};

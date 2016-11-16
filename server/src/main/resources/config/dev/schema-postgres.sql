@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS Evenement (
+DROP TABLE Evenement;
+CREATE TABLE Evenement (
   id_evt SERIAL PRIMARY KEY,
   date_evt varchar(255),
   desc_evt varchar(255) default NULL,

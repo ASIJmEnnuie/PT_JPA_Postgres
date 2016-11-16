@@ -22,15 +22,15 @@ const PT_EventList = React.createClass({
             return(
               <PT_Event
                 key={i}
-                nom={event.nom}
-                lieu={event.lieu}
-                organisateur={event.organisateur}
-                date={event.date}
-                heure={event.heure}
-                description={event.description}
-                nbInscriptions={event.nb_inscriptions}
-                nbPlaces={event.nb_places}
-                image={event.image}
+                nom={event.nomEvt}
+                lieu={event.lieuEvt}
+                organisateur={event.orgaEvt}
+                date={event.dateEvt}
+                heure={event.heureEvt}
+                description={event.descEvt}
+                nbInscriptions={event.nbInscEvt}
+                nbPlaces={event.nbPlacesEvt}
+                image={event.imageEvt}
               />
             );
           })
