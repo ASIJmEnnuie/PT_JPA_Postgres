@@ -19,7 +19,7 @@ const PT_Event = React.createClass({
 
             <div className="col">
               <div className="row"><span className="title">{this.props.nom_evt}</span></div>
-              <div className="row"><span>Le {this.props.date} à {this.props.heure_evt}</span></div>
+              <div className="row"><span>Le {this.props.date_evt} à {this.props.heure_evt}</span></div>
               <div className="row"><span>{this.props.lieu_evt}</span></div>
             </div>
 

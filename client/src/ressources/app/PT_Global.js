@@ -21,7 +21,6 @@ const PT_Global = React.createClass({
 
       stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/listeEvenementsDate', function (getEventsByDate) {
-          console.log("TEEEEEEEEEEEEEEEST" + getEventsByDate.body);
           composant.setState({donnees:JSON.parse(getEventsByDate.body)});
         });
 
@@ -54,7 +53,7 @@ const PT_Global = React.createClass({
     var date = new Date(dateRecept);
     var day = zerosBeforeNumbers(date.getDate());
     var month = zerosBeforeNumbers(date.getMonth()+1);
-    var year = date.getFullYear();
+    var year = date.getYear()-100;
     var dateSend = day+"/"+month+"/"+year;
     console.log("DAAAAAATE" + dateSend);
     this.state.stompClient.send("/app/evenementsDate", {}, JSON.stringify({'message': dateSend}));

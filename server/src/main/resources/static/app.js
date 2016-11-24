@@ -55,6 +55,7 @@ function showEvents(events) {
     $("#eventsList").html("");
     for (attribut in events) {
       $("#eventsList").append("<tr>");
+      $("#eventsList").append("<td>" + events[attribut].id_evt + "</td>");
       $("#eventsList").append("<td>" + events[attribut].nom_evt + "</td>");
       $("#eventsList").append("<td>" + events[attribut].lieu_evt + "</td>");
       $("#eventsList").append("<td>" + events[attribut].orga_evt + "</td>");

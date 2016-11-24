@@ -1,4 +1,3 @@
-DROP TABLE Evenement;
 CREATE TABLE Evenement (
   id_evt SERIAL PRIMARY KEY,
   date_evt varchar(255),

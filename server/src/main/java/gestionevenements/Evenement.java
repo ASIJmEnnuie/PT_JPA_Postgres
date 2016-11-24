@@ -8,25 +8,25 @@ public class Evenement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idEvt", nullable = false)
+    @Column(name = "id_evt", nullable = false)
     private Long idEvt;
-    @Column(name = "nomEvt", nullable = false)
+    @Column(name = "nom_evt", nullable = false)
     private String nomEvt;
-    @Column(name = "lieuEvt")
+    @Column(name = "lieu_evt")
     private String lieuEvt;
-    @Column(name = "orgaEvt")
+    @Column(name = "orga_evt")
     private String orgaEvt;
-    @Column(name = "dateEvt")
+    @Column(name = "date_evt")
     private String dateEvt;
-    @Column(name = "heureEvt")
+    @Column(name = "heure_evt")
     private String heureEvt;
-    @Column(name = "descEvt")
+    @Column(name = "desc_evt")
     private String descEvt;
-    @Column(name = "nbInscEvt")
+    @Column(name = "nb_insc_evt")
     private int nbInscEvt;
-    @Column(name = "nbPlacesEvt")
+    @Column(name = "nb_places_evt")
     private int nbPlacesEvt;
-    @Column(name = "imageEvt")
+    @Column(name = "image_evt")
     private String imageEvt;
 
     public Evenement() {

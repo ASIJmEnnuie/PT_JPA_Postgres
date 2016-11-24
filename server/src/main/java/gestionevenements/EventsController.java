@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 //@RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class EventsController {
 
-  private final List<Evenement> evenements = new LinkedList<>();
+  //private final List<Evenement> evenements = new LinkedList<>();
 
     @Inject
     EvenementRepository evenementRepository;
@@ -46,11 +46,11 @@ public class EventsController {
     public List<Evenement> getEventsByDate(@PathVariable Message message) {
         final List<Evenement> eventsFound = new LinkedList<>();
         final Iterable<Evenement> events = evenementRepository.findByDateEvt(message.getMessage());
-
+        System.out.println("\n\n\n\n un evt : " + events + "\n\n\n\n ");
         events.forEach(new Consumer<Evenement>() {
             @Override
             public void accept(Evenement evenement) {
-                System.out.println("\n\n\n\n un evt : " + evenement);
+                System.out.println("\n\n\n\n un evt : " + evenement + "\n\n\n\n ");
                 eventsFound.add(evenement);
             }
         });

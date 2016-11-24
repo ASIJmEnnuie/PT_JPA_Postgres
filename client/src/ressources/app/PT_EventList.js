@@ -19,18 +19,20 @@ const PT_EventList = React.createClass({
       <div className={this.state.class}>
         {
           this.props.events.map(function(event, i){
+              console.log("eventDate: " + event.dateEvt);
+              console.log("heureEvt: " + event.heureEvt);
             return(
               <PT_Event
                 key={i}
-                nom_evt={event.nom_evt}
-                lieu_evt={event.lieu_evt}
-                orga_evt={event.orga_evt}
-                date_evt={event.date_evt}
-                heure_evt={event.heure_evt}
-                desc_evt={event.desc_evt}
-                nb_insc_evt={event.nb_insc_evt}
-                nb_places_evt={event.nb_places_evt}
-                image_evt={event.image_evt}
+                nom_evt={event.nomEvt}
+                lieu_evt={event.lieuEvt}
+                orga_evt={event.orgaEvt}
+                date_evt={event.dateEvt}
+                heure_evt={event.heureEvt}
+                desc_evt={event.descEvt}
+                nb_insc_evt={event.nbInscEvt}
+                nb_places_evt={event.nbPlacesEvt}
+                image_evt={event.imageEvt}
               />
             );
           })
